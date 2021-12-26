@@ -18,3 +18,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build
       run: cargo build --release
+    - uses: actions/upload-artifact@v2
+      with:
+        name: librespot
+        path: \librespot\librespot # or path/to/artifact
