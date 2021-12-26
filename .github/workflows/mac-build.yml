@@ -1,0 +1,28 @@
+name: Build on Mac.
+
+on:
+  push:
+    branches: [ workflow-master ]
+  pull_request:
+    branches: [ workflow-master ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: cargo build --release
+    - uses: actions/upload-artifact@v2
+      with:
+        name: librespot
+        path: target/release # or path/to/artifact
+    - uses: actions/upload-artifact@v2
+      with:
+        name: librespot.exe
+        path: target/release/librespot
