@@ -31,4 +31,4 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: librespot-arm64
-        path: target/aarch64-apple-darwin/debug/librespot
+        path: target/aarch64-apple-darwin/release/librespot
