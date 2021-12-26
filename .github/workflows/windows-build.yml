@@ -20,9 +20,5 @@ jobs:
       run: cargo build --release
     - uses: actions/upload-artifact@v2
       with:
-        name: librespot
-        path: target/release # or path/to/artifact
-    - uses: actions/upload-artifact@v2
-      with:
         name: librespot.exe
         path: target/release/librespot.exe
