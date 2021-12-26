@@ -21,4 +21,4 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: librespot
-        path: \librespot\librespot # or path/to/artifact
+        path: librespot\librespot # or path/to/artifact
