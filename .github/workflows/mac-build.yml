@@ -16,13 +16,19 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build
+    - name: x64 Build
       run: cargo build --release
+    - name: arm64 build
+      run: rustup target add aarch64-apple-darwin && cargo build --target=aarch64-apple-darwin
     - uses: actions/upload-artifact@v2
       with:
         name: librespot
         path: target/release # or path/to/artifact
     - uses: actions/upload-artifact@v2
       with:
-        name: librespot.exe
+        name: librespot-x64
         path: target/release/librespot
+    - uses: actions/upload-artifact@v2
+      with:
+        name: librespot-arm64
+        path: target/aarch64-apple-darwin/debug/librespot
