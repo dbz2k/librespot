@@ -20,7 +20,6 @@ jobs:
       with:
         name: librespot.exe
         path: target/release/librespot.exe
-      name: windows-build
     
   mac-build:
      runs-on: macos-latest
