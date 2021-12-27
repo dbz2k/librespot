@@ -10,7 +10,7 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  lint:
+  windows-build:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
@@ -18,16 +18,17 @@ jobs:
       run: cargo build --release
     - uses: actions/upload-artifact@v2
       with:
-        name: librespot.exe
+        name: librespot-win-x64.exe
         path: target/release/librespot.exe
     
   mac-build:
      runs-on: macos-latest
      steps:
+     - uses: actions/checkout@v2
      - run: cargo build --release
      - uses: actions/upload-artifact@v2
        with:
-        name: librespot-x64
+        name: librespot-mac-x64
         path: target/release/librespot
     
         
