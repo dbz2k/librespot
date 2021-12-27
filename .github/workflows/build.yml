@@ -37,8 +37,9 @@ jobs:
      - run: rustup target add aarch64-apple-darwin && cargo build --target=aarch64-apple-darwin --release
      - uses: actions/upload-artifact@v2
        with:
+        run: cd /target/release/
         name: librespot-mac-arm64
-        path: target/aarch64-apple-darwin/librespot
+        path: target/release/librespot
     
         
   linux-build:
