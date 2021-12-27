@@ -30,5 +30,17 @@ jobs:
        with:
         name: librespot-mac-x64
         path: target/release/librespot
+        
+  linux-build:
+     runs-on: ubuntu-latest
+     steps:
+     - uses: actions/checkout@v2
+     - run: cargo build --release
+     - uses: actions/upload-artifact@v2
+       with:
+        name: librespot-linux-x64
+        path: target/release/librespot
+        
+   
     
         
