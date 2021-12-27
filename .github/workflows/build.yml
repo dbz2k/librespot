@@ -30,6 +30,17 @@ jobs:
         name: librespot-mac-x64
         path: target/release/librespot
         
+  mac-arm64-build:
+     runs-on: macos-latest
+     steps:
+     - uses: actions/checkout@v2
+     - run: rustup target add aarch64-apple-darwin && cargo build --target=aarch64-apple-darwin --release
+     - uses: actions/upload-artifact@v2
+       with:
+        name: librespot-mac-arm64
+        path: target/aarch64-apple-darwin/librespot
+    
+        
   linux-build:
      runs-on: ubuntu-latest
      steps:
@@ -40,5 +51,7 @@ jobs:
        with:
         name: librespot-linux-x64
         path: target/release/librespot
+        
+        
         
         
